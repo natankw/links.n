@@ -10,12 +10,11 @@ function login(){
         logado = true;
 
         document.getElementById("loginBox").style.display = "none";
-
         document.getElementById("painel").style.display = "block";
 
         listar();
 
-    }else{
+    } else {
 
         alert("❌ Senha incorreta");
 
@@ -30,34 +29,63 @@ function publicar(){
     if(!logado) return;
 
 
-    const dados = {
+    const arquivo = document.getElementById("imagem").files[0];
 
-        nome: document.getElementById("nome").value,
 
-        imagem: document.getElementById("imagem").value,
+    if(!arquivo){
 
-        categoria: document.getElementById("categoria").value,
+        alert("❌ Escolha uma imagem");
 
-        descricao: document.getElementById("descricao").value,
+        return;
 
-        versao: document.getElementById("versao").value,
+    }
 
-        tamanho: document.getElementById("tamanho").value,
 
-        link: document.getElementById("link").value
+    const leitor = new FileReader();
+
+
+
+    leitor.onload = function(){
+
+
+        const dados = {
+
+            nome: document.getElementById("nome").value,
+
+            imagem: leitor.result,
+
+            categoria: document.getElementById("categoria").value,
+
+            descricao: document.getElementById("descricao").value,
+
+            versao: document.getElementById("versao").value,
+
+            tamanho: document.getElementById("tamanho").value,
+
+            link: document.getElementById("link").value
+
+        };
+
+
+
+        adicionarDownload(dados);
+
+
+
+        alert("✅ Download publicado");
+
+
+        limpar();
+
+        listar();
+
 
     };
 
 
-    adicionarDownload(dados);
 
+    leitor.readAsDataURL(arquivo);
 
-    alert("✅ Download publicado");
-
-
-    limpar();
-
-    listar();
 
 }
 
@@ -68,24 +96,33 @@ function listar(){
 
     const area = document.getElementById("lista");
 
+
     if(!area) return;
 
 
     area.innerHTML = "";
 
 
+
     listarDownloads().forEach(item => {
+
 
 
         area.innerHTML += `
 
         <div class="card">
 
-        <img src="${item.imagem}" width="100%">
+
+        <img src="${item.imagem}" class="thumb">
+
 
         <h3>${item.nome}</h3>
 
-        <p>${item.categoria}</p>
+
+        <p>📂 ${item.categoria}</p>
+
+
+        <p>${item.descricao}</p>
 
 
         <a href="download.html?id=${item.id}" target="_blank">
@@ -96,6 +133,13 @@ function listar(){
 
 
         <br><br>
+
+
+        <button onclick="editar(${item.id})">
+
+        ✏️ Editar
+
+        </button>
 
 
         <button onclick="deletar(${item.id})">
@@ -112,6 +156,7 @@ function listar(){
 
     });
 
+
 }
 
 
@@ -119,13 +164,46 @@ function listar(){
 
 function deletar(id){
 
+
     if(confirm("Excluir download?")){
+
 
         excluirDownload(id);
 
+
         listar();
 
+
     }
+
+
+}
+
+
+
+
+function editar(id){
+
+    const item = buscarDownload(id);
+
+
+    if(!item) return;
+
+
+    document.getElementById("nome").value = item.nome;
+
+    document.getElementById("categoria").value = item.categoria;
+
+    document.getElementById("descricao").value = item.descricao;
+
+    document.getElementById("versao").value = item.versao;
+
+    document.getElementById("tamanho").value = item.tamanho;
+
+    document.getElementById("link").value = item.link;
+
+
+    alert("✏️ Edite os dados e publique novamente");
 
 }
 
@@ -134,7 +212,10 @@ function deletar(id){
 
 function limpar(){
 
+
     document.querySelectorAll("input, textarea")
+
     .forEach(e => e.value = "");
+
 
 }
