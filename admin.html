@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin - @natankw Downloads</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="admin">
+
+
+<h1>⚡ Painel Admin</h1>
+
+
+<div id="loginBox" class="box">
+
+<h2>🔐 Login</h2>
+
+<input 
+id="senha"
+type="password"
+placeholder="Senha de administrador"
+>
+
+
+<button onclick="login()">
+Entrar
+</button>
+
+
+</div>
+
+
+
+<div id="painel" class="box" style="display:none;">
+
+
+<h2>📦 Novo Download</h2>
+
+
+<input id="nome" placeholder="Nome do jogo/app">
+
+
+<input id="imagem" placeholder="Imagem (uploads/foto.png)">
+
+
+<select id="categoria">
+
+<option>Jogos</option>
+<option>Apps</option>
+<option>Programação</option>
+<option>Cursos</option>
+<option>Bots</option>
+<option>Outros</option>
+
+</select>
+
+
+<textarea 
+id="descricao"
+placeholder="Descrição">
+</textarea>
+
+
+<input id="versao" placeholder="Versão">
+
+
+<input id="tamanho" placeholder="Tamanho">
+
+
+<input id="link" placeholder="Link do download">
+
+
+<button onclick="publicar()">
+🚀 Publicar
+</button>
+
+
+
+<h2>📂 Downloads publicados</h2>
+
+
+<div id="lista"></div>
+
+
+</div>
+
+
+</div>
+
+
+
+<script src="js/banco.js"></script>
+<script src="js/admin.js"></script>
+
+
+</body>
+
+</html>
