@@ -1,0 +1,293 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+body{
+
+    background:#000;
+
+    color:#fff;
+
+    min-height:100vh;
+
+    padding-bottom:40px;
+
+}
+
+
+
+h1,h2,h3{
+
+    color:#fff;
+
+    text-shadow:0 0 10px #f00;
+
+}
+
+
+
+
+.perfil{
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+
+
+.foto{
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid red;
+
+    box-shadow:0 0 25px red;
+
+}
+
+
+
+.whatsapp,
+button{
+
+
+    background:red;
+
+    color:white;
+
+    border:0;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    box-shadow:0 0 15px red;
+
+    transition:.3s;
+
+}
+
+
+
+button:hover,
+.whatsapp:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+.pesquisa{
+
+    text-align:center;
+
+}
+
+
+
+input,
+textarea,
+select{
+
+
+    width:90%;
+
+    max-width:500px;
+
+    padding:14px;
+
+    margin:8px;
+
+    border-radius:12px;
+
+    background:#111;
+
+    color:white;
+
+    border:1px solid red;
+
+}
+
+
+
+textarea{
+
+    height:120px;
+
+}
+
+
+
+
+
+.categorias{
+
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin:20px;
+
+
+}
+
+
+
+.categorias button{
+
+    padding:10px 15px;
+
+}
+
+
+
+
+#downloads,
+#lista{
+
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+
+
+}
+
+
+
+
+.card{
+
+
+    background:
+
+    rgba(255,0,0,.08);
+
+
+    border:1px solid red;
+
+
+    border-radius:20px;
+
+
+    padding:20px;
+
+
+    box-shadow:
+
+    0 0 20px rgba(255,0,0,.3);
+
+
+    backdrop-filter:blur(10px);
+
+
+}
+
+
+
+.thumb{
+
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+
+}
+
+
+
+
+
+.admin{
+
+
+    width:90%;
+
+    max-width:600px;
+
+    margin:40px auto;
+
+
+}
+
+
+
+
+.box{
+
+
+    background:#080808;
+
+    border:1px solid red;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:0 0 20px red;
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+.card{
+
+    padding:15px;
+
+}
+
+
+h1{
+
+    font-size:25px;
+
+}
+
+
+  }
