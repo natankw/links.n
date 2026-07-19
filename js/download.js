@@ -13,59 +13,69 @@ const item = buscarDownload(id);
 if(!item){
 
     area.innerHTML = `
+    <div class="card">
     <h1>❌ Download não encontrado</h1>
+    </div>
     `;
 
 }else{
 
 
-area.innerHTML = `
-
-<div class="card">
+    aumentarViews(id);
 
 
-<img src="${item.imagem}" class="thumb">
+    area.innerHTML = `
+
+    <div class="card">
 
 
-<h1>${item.nome}</h1>
+    <img src="${item.imagem}" class="thumb">
 
 
-<h3>
-📂 ${item.categoria}
-</h3>
+    <h1>${item.nome}</h1>
 
 
-<p>
-${item.descricao}
-</p>
+    <h3>
+    📂 ${item.categoria}
+    </h3>
 
 
-<p>
-📦 Versão: ${item.versao || "Não informado"}
-</p>
+    <p>
+    ${item.descricao}
+    </p>
 
 
-<p>
-💾 Tamanho: ${item.tamanho || "Não informado"}
-</p>
+    <p>
+    📦 Versão: ${item.versao || "Não informado"}
+    </p>
 
 
-<br>
+    <p>
+    💾 Tamanho: ${item.tamanho || "Não informado"}
+    </p>
 
 
-<a href="${item.link}" target="_blank">
-
-<button>
-
-⬇️ Baixar agora
-
-</button>
-
-</a>
+    <p>
+    👁 Visualizações: ${item.views || 0}
+    </p>
 
 
-</div>
+    <br>
 
-`;
+
+    <a href="${item.link}" target="_blank">
+
+    <button>
+
+    ⬇️ Baixar agora
+
+    </button>
+
+    </a>
+
+
+    </div>
+
+    `;
 
 }
