@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Admin - 𝙺.𝚡 HΞLL 🇬🇪 Downloads</title>
+<title>Admin R.H.S</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -19,82 +19,105 @@
 <div class="admin">
 
 
-<div id="loginBox" class="box">
+<div id="loginBox" class="card">
 
-<h1>🔐 Admin</h1>
+
+<h1>
+🔐 Admin
+</h1>
+
 
 <input 
-id="10092008"
-type="10092008"
-placeholder="10092008"
+id="senha"
+type="password"
+placeholder="Senha"
 >
 
+
 <button onclick="login()">
+
 Entrar
+
 </button>
+
 
 </div>
 
 
 
 
-<div id="painel" class="box" style="display:none;">
+
+<div id="painel" class="card" style="display:none;">
 
 
-<h1>⚡ Painel</h1>
+<h1>
+🛒 Gerenciar Loja
+</h1>
 
 
-<input id="nome" placeholder="Nome do arquivo">
 
 
-<input id="imagem" type="file" accept="image/*">
+<input id="nome" placeholder="Nome do produto">
 
 
-<select id="categoria">
+<input id="imagem" placeholder="Imagem">
 
-<option>Jogos</option>
-<option>Apps</option>
-<option>Programação</option>
-<option>Cursos</option>
-<option>Bots</option>
-<option>Outros</option>
 
-</select>
+<input id="preco" placeholder="Preço">
 
+
+<input id="categoria" placeholder="Categoria">
 
 
 <textarea id="descricao" placeholder="Descrição"></textarea>
 
 
-<input id="versao" placeholder="Versão">
+<input id="entrega" placeholder="Entrega digital">
 
 
-<input id="tamanho" placeholder="Tamanho">
 
+<button onclick="salvar()">
 
-<input id="link" placeholder="Link do MediaFire">
+Adicionar produto
 
-
-<button onclick="publicar()">
-🚀 Publicar
 </button>
 
 
 
-<h2>Downloads</h2>
+
+
+<h2>
+📦 Produtos
+</h2>
 
 
 <div id="lista"></div>
 
 
+
+
+
+<h2>
+🛍 Pedidos
+</h2>
+
+
+<div id="pedidos"></div>
+
+
+
 </div>
 
 
+
 </div>
+
+
 
 
 
 <script src="js/banco.js"></script>
+
 <script src="js/admin.js"></script>
 
 
