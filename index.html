@@ -1,62 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>@natankw Downloads</title>
+<title>R.H.S Vendas</title>
 
 <link rel="stylesheet" href="css/style.css">
 
 </head>
 
+
 <body>
 
 
-<header class="perfil">
+<header class="header">
 
-<img src="img/logo.png" class="foto">
+<h1>🛒 R.H.S Vendas</h1>
 
-<h1>@natankw</h1>
-
-<p>📦 Downloads exclusivos</p>
-
-<a class="whatsapp" href="#">
-💬 WhatsApp
-</a>
+<button onclick="abrirCarrinho()">
+🛍 Carrinho
+</button>
 
 </header>
 
 
 
-<div class="pesquisa">
 
-<input id="pesquisa" placeholder="🔎 Pesquisar download">
+
+<section class="banner">
+
+
+<div>
+
+<h1>
+Produtos digitais
+</h1>
+
+
+<p>
+Compre seus itens favoritos de forma rápida e segura
+</p>
+
+
+<button>
+Ver produtos
+</button>
+
 
 </div>
 
 
-
-<div class="categorias">
-
-<button onclick="filtrar('Todos')">🔥 Todos</button>
-<button onclick="filtrar('Jogos')">🎮 Jogos</button>
-<button onclick="filtrar('Apps')">📱 Apps</button>
-<button onclick="filtrar('Programação')">💻 Programação</button>
-<button onclick="filtrar('Cursos')">📚 Cursos</button>
-<button onclick="filtrar('Bots')">🤖 Bots</button>
-
-</div>
+</section>
 
 
 
-<section id="downloads"></section>
+
+
+
+
+<section class="categorias">
+
+
+<button onclick="categoria('Todos')">
+Todos
+</button>
+
+
+<button onclick="categoria('Jogos')">
+🎮 Jogos
+</button>
+
+
+<button onclick="categoria('Robux')">
+💎 Robux
+</button>
+
+
+<button onclick="categoria('Apps')">
+📱 Apps
+</button>
+
+
+<button onclick="categoria('Outros')">
+📦 Outros
+</button>
+
+
+</section>
+
+
+
+
+
+
+<h2 class="titulo">
+🔥 Produtos em destaque
+</h2>
+
+
+
+
+
+<div id="produtos" class="produtos"></div>
+
+
+
+
+
 
 
 
 <script src="js/banco.js"></script>
-<script src="js/script.js"></script>
+
+<script src="js/loja.js"></script>
+
 
 </body>
+
 </html>
