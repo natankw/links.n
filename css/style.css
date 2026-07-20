@@ -8,62 +8,55 @@
 
 body{
 
-    background:#000;
+    background:#050505;
 
-    color:#fff;
-
-    min-height:100vh;
-
-    padding-bottom:40px;
-
-}
-
-
-
-h1,h2,h3{
-
-    color:#fff;
-
-    text-shadow:0 0 10px #f00;
+    color:white;
 
 }
 
 
 
 
-.perfil{
+.header{
 
-    text-align:center;
+    height:70px;
 
-    padding:40px 20px;
+    display:flex;
 
-}
+    justify-content:space-between;
 
+    align-items:center;
 
+    padding:0 25px;
 
-.foto{
+    background:#090909;
 
-    width:130px;
+    border-bottom:1px solid #ff0000;
 
-    height:130px;
+    position:sticky;
 
-    border-radius:50%;
+    top:0;
 
-    object-fit:cover;
-
-    border:3px solid red;
-
-    box-shadow:0 0 25px red;
+    z-index:10;
 
 }
 
 
 
-.whatsapp,
+.header h1{
+
+    color:#ff0000;
+
+    text-shadow:0 0 15px red;
+
+}
+
+
+
+
 button{
 
-
-    background:red;
+    background:#ff0000;
 
     color:white;
 
@@ -75,68 +68,77 @@ button{
 
     cursor:pointer;
 
-    text-decoration:none;
-
-    display:inline-block;
-
-    margin-top:10px;
-
-    box-shadow:0 0 15px red;
-
-    transition:.3s;
+    font-weight:bold;
 
 }
 
 
 
-button:hover,
-.whatsapp:hover{
+button:hover{
 
-    transform:scale(1.05);
+    box-shadow:0 0 20px red;
 
 }
 
 
 
 
-.pesquisa{
 
-    text-align:center;
+
+
+.banner{
+
+
+    height:350px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    padding:40px;
+
+
+    background:
+
+    linear-gradient(
+    90deg,
+    #000,
+    #550000
+    );
+
 
 }
 
 
 
-input,
-textarea,
-select{
+.banner h1{
 
 
-    width:90%;
+    font-size:45px;
 
-    max-width:500px;
-
-    padding:14px;
-
-    margin:8px;
-
-    border-radius:12px;
-
-    background:#111;
 
     color:white;
 
-    border:1px solid red;
 
 }
 
 
 
-textarea{
+.banner p{
 
-    height:120px;
+
+    margin:15px 0;
+
+
+    color:#ddd;
+
 
 }
+
+
 
 
 
@@ -147,46 +149,56 @@ textarea{
 
     display:flex;
 
-    flex-wrap:wrap;
 
-    justify-content:center;
+    gap:12px;
 
-    gap:10px;
 
-    margin:20px;
+    padding:25px;
+
+
+    overflow-x:auto;
 
 
 }
 
 
 
-.categorias button{
 
-    padding:10px 15px;
+.titulo{
+
+
+    padding:20px;
+
+
+    color:#ff0000;
+
 
 }
 
 
 
 
-#downloads,
-#lista{
 
+.produtos{
 
-    width:90%;
-
-    margin:auto;
 
     display:grid;
 
+
     grid-template-columns:
 
-    repeat(auto-fit,minmax(250px,1fr));
+    repeat(auto-fit,minmax(230px,1fr));
+
 
     gap:20px;
 
 
+    padding:20px;
+
+
 }
+
+
 
 
 
@@ -194,40 +206,57 @@ textarea{
 .card{
 
 
-    background:
-
-    rgba(255,0,0,.08);
+    background:#0d0d0d;
 
 
-    border:1px solid red;
+    border:1px solid #222;
 
 
     border-radius:20px;
 
 
-    padding:20px;
+    padding:15px;
 
 
-    box-shadow:
-
-    0 0 20px rgba(255,0,0,.3);
-
-
-    backdrop-filter:blur(10px);
+    transition:.3s;
 
 
 }
 
 
 
-.thumb{
+.card:hover{
+
+
+    transform:translateY(-8px);
+
+
+    border-color:red;
+
+
+    box-shadow:
+
+    0 0 25px rgba(255,0,0,.5);
+
+
+}
+
+
+
+
+
+
+.card img{
 
 
     width:100%;
 
-    height:180px;
+
+    height:220px;
+
 
     object-fit:cover;
+
 
     border-radius:15px;
 
@@ -238,36 +267,80 @@ textarea{
 
 
 
-.admin{
+.card h2{
 
 
-    width:90%;
+    margin:10px 0;
+
+
+}
+
+
+
+
+
+.preco{
+
+
+    color:#00ff66;
+
+
+    font-size:22px;
+
+
+}
+
+
+
+
+
+.produto-page{
+
 
     max-width:600px;
+
 
     margin:40px auto;
 
 
+    padding:20px;
+
+
 }
 
 
 
 
-.box{
 
 
-    background:#080808;
+input,
+textarea,
+select{
+
+
+    width:100%;
+
+
+    padding:15px;
+
+
+    margin:10px 0;
+
+
+    background:#111;
+
 
     border:1px solid red;
 
-    padding:25px;
 
-    border-radius:20px;
+    color:white;
 
-    box-shadow:0 0 20px red;
+
+    border-radius:10px;
 
 
 }
+
 
 
 
@@ -276,18 +349,11 @@ textarea{
 @media(max-width:600px){
 
 
-.card{
+.banner h1{
 
-    padding:15px;
-
-}
-
-
-h1{
-
-    font-size:25px;
+font-size:30px;
 
 }
 
 
-  }
+}
