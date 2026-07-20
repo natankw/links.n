@@ -1,67 +1,196 @@
-const SENHA_ADMIN = "10092008";
-
-let downloads = JSON.parse(localStorage.getItem("downloads")) || [];
-
-
-function salvarBanco(){
-    localStorage.setItem("downloads", JSON.stringify(downloads));
-}
+const produtos = JSON.parse(
+localStorage.getItem("produtos")
+) || [];
 
 
-function listarDownloads(){
-    return downloads;
-}
+const pedidos = JSON.parse(
+localStorage.getItem("pedidos")
+) || [];
 
 
-function buscarDownload(id){
-    return downloads.find(item => item.id == id);
-}
+const carrinho = JSON.parse(
+localStorage.getItem("carrinho")
+) || [];
 
 
-function adicionarDownload(dados){
-
-    dados.id = Date.now();
-    dados.data = new Date().toLocaleDateString("pt-BR");
-    dados.views = 0;
-
-    downloads.push(dados);
-
-    salvarBanco();
-}
 
 
-function editarDownload(id,dados){
 
-    const item = buscarDownload(id);
+function salvarProdutos(){
 
-    if(item){
-
-        Object.assign(item,dados);
-
-        salvarBanco();
-
-    }
-}
-
-
-function excluirDownload(id){
-
-    downloads = downloads.filter(item => item.id != id);
-
-    salvarBanco();
+localStorage.setItem(
+"produtos",
+JSON.stringify(produtos)
+);
 
 }
 
 
-function aumentarViews(id){
 
-    const item = buscarDownload(id);
 
-    if(item){
+function listarProdutos(){
 
-        item.views++;
+return produtos;
 
-        salvarBanco();
+}
 
-    }
+
+
+
+
+function buscarProduto(id){
+
+return produtos.find(
+p=>p.id == id
+);
+
+}
+
+
+
+
+
+function adicionarProduto(produto){
+
+
+produto.id = Date.now();
+
+
+produtos.push(produto);
+
+
+salvarProdutos();
+
+
+}
+
+
+
+
+
+
+function editarProduto(id, dados){
+
+
+let produto =
+buscarProduto(id);
+
+
+
+if(produto){
+
+
+Object.assign(
+produto,
+dados
+);
+
+
+
+salvarProdutos();
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+function excluirProduto(id){
+
+
+let index =
+produtos.findIndex(
+p=>p.id == id
+);
+
+
+
+if(index >= 0){
+
+
+produtos.splice(
+index,
+1
+);
+
+
+
+salvarProdutos();
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+function adicionarCarrinho(produto){
+
+
+carrinho.push(produto);
+
+
+localStorage.setItem(
+"carrinho",
+JSON.stringify(carrinho)
+);
+
+
+}
+
+
+
+
+
+
+
+function pegarCarrinho(){
+
+return carrinho;
+
+}
+
+
+
+
+
+
+
+function criarPedido(pedido){
+
+
+pedidos.push(pedido);
+
+
+
+localStorage.setItem(
+"pedidos",
+JSON.stringify(pedidos)
+);
+
+
+}
+
+
+
+
+
+
+
+function pegarPedidos(){
+
+return pedidos;
+
 }
